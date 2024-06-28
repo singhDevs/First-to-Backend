@@ -3,6 +3,17 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const cr7Data =
+{
+    "name": "Cristiano Ronaldo",
+    "team": "Al-Nassr",
+    "nationality": "Portuguese",
+    "position": "Forward",
+    "goals": 800,
+    "assists": 220,
+    "appearances": 1050
+}
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
@@ -17,6 +28,10 @@ app.get('/login', (req, res) => {
 
 app.get('/youtube', (req, res) => {
     res.send('<hp><i>Chai aur Code</i></p>')
+})
+
+app.get('/cr7', (req, res) => {
+    res.json(cr7Data)
 })
 
 app.listen(process.env.PORT, () => {
